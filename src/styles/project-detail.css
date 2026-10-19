@@ -1,0 +1,1034 @@
+/* ============================================================================
+ * PROJECT DETAIL PAGE
+ * Built on the existing design tokens (.container / .row / .flex-col / .stripe)
+ * so the case-study pages sit inside the same visual system as the rest of
+ * the site. All rules are namespaced under .pd- to avoid collisions.
+ * ========================================================================== */
+
+/* ---------------------------------------------------------- Detail header */
+
+.pd-header {
+   padding-top: calc(var(--section-padding) * 1.33);
+   padding-bottom: calc(var(--section-padding) * .4);
+}
+
+.pd-header h1 span {
+   display: block;
+}
+
+.pd-header h1 span:first-child {
+   margin-bottom: .12em;
+}
+
+.pd-header .pd-header-sub {
+   font-size: .42em;
+   line-height: 1.25;
+   color: var(--color-gray);
+   max-width: 18em;
+}
+
+/* Meta row: Location / Services / Year / Stack */
+.pd-meta {
+   margin-top: calc(var(--section-padding) * .35);
+}
+
+.pd-meta .flex-col {
+   width: 25%;
+   padding-right: var(--gap-padding);
+}
+
+.pd-meta h5 {
+   margin: 0 0 .6em 0;
+   font-size: .8em;
+   text-transform: uppercase;
+   letter-spacing: .12em;
+   color: var(--color-gray);
+}
+
+.pd-meta p {
+   margin: 0;
+   font-size: 1em;
+   line-height: 1.45;
+}
+
+/* --------------------------------------------------------------- Hero art */
+
+.pd-hero {
+   padding-top: calc(var(--section-padding) * .2);
+   padding-bottom: calc(var(--section-padding) * .2);
+}
+
+/* Square frame, matching the project tiles so the square art is never
+   cropped and renders identically everywhere it appears. When a real
+   screenshot is available it is a wide image, so the frame goes 16:9. */
+.pd-hero-frame {
+   position: relative;
+   width: 100%;
+   aspect-ratio: 1 / 1;
+   overflow: hidden;
+   border-radius: 4px;
+}
+
+.pd-hero-frame.is-wide {
+   aspect-ratio: 16 / 9;
+}
+
+@media (max-width: 575px) {
+   .pd-hero-frame.is-wide {
+      aspect-ratio: 4 / 3;
+   }
+}
+
+.pd-hero-frame .overlay-image {
+   position: absolute;
+   inset: 0;
+}
+
+/* -------------------------------------------------------------- Overview */
+
+.pd-overview,
+.pd-challenge,
+.pd-stack {
+   padding-top: calc(var(--section-padding) * .3);
+   padding-bottom: calc(var(--section-padding) * .3);
+}
+
+.pd-overview .flex-col:nth-child(1),
+.pd-challenge .flex-col:nth-child(1),
+.pd-stack .flex-col:nth-child(1) {
+   width: 26%;
+   padding-left: var(--container-padding);
+   padding-right: var(--gap-padding);
+}
+
+.pd-overview .flex-col:nth-child(1) h5,
+.pd-challenge .flex-col:nth-child(1) h5,
+.pd-stack .flex-col:nth-child(1) h5 {
+   margin: 0;
+   font-size: .8em;
+   text-transform: uppercase;
+   letter-spacing: .12em;
+   color: var(--color-gray);
+}
+
+.pd-overview .flex-col:nth-child(2),
+.pd-challenge .flex-col:nth-child(2),
+.pd-stack .flex-col:nth-child(2) {
+   width: 74%;
+}
+
+.pd-overview h4 {
+   font-size: clamp(1.5em, 3vw, 2.6em);
+   line-height: 1.18;
+   text-transform: none;
+   letter-spacing: -.01em;
+   max-width: 22em;
+}
+
+.pd-overview h4 .span-line-inner {
+   text-transform: none;
+}
+
+.pd-lead {
+   margin: 0;
+   font-size: clamp(1.05em, 1.6vw, 1.5em);
+   line-height: 1.5;
+   max-width: 30em;
+   color: var(--color-gray);
+}
+
+/* --------------------------------------------------------------- Metrics */
+
+.pd-metrics {
+   padding-top: calc(var(--section-padding) * .25);
+   padding-bottom: calc(var(--section-padding) * .25);
+}
+
+.pd-metrics .row {
+   width: calc(100% + (var(--container-padding) * 2));
+   margin-left: calc(var(--container-padding) * -1);
+   flex-wrap: wrap;
+}
+
+.pd-metrics .flex-col {
+   width: 25%;
+   padding: 0 var(--container-padding);
+   border-top: 1px solid var(--color-border);
+   padding-top: calc(var(--section-padding) * .12);
+}
+
+.pd-metric-value {
+   margin: 0;
+   font-size: clamp(2.6em, 6vw, 5em);
+   line-height: 1;
+   font-weight: 700;
+   letter-spacing: -.02em;
+}
+
+.pd-metric-label {
+   margin: .6em 0 0 0;
+   font-size: .8em;
+   text-transform: uppercase;
+   letter-spacing: .12em;
+   color: var(--color-gray);
+}
+
+/* ------------------------------------------------------------ Highlights */
+
+.pd-highlights {
+   padding-top: calc(var(--section-padding) * .35);
+   padding-bottom: calc(var(--section-padding) * .4);
+}
+
+.pd-highlights .row:nth-child(1) {
+   padding-bottom: calc(var(--section-padding) * .25);
+}
+
+.pd-highlights h2 {
+   margin: 0;
+}
+
+.pd-highlight-grid {
+   width: calc(100% + (var(--container-padding) * 2));
+   margin-left: calc(var(--container-padding) * -1);
+   flex-wrap: wrap;
+}
+
+.pd-highlight-grid .flex-col {
+   width: 33.333%;
+   padding: calc(var(--section-padding) * .12) var(--container-padding);
+   border-top: 1px solid var(--color-border);
+}
+
+.pd-highlight-grid .flex-col h5 {
+   margin: 0 0 1.4em 0;
+   font-size: .8em;
+   color: var(--color-gray);
+}
+
+.pd-highlight-grid .flex-col .stripe {
+   margin-bottom: 1.6em;
+}
+
+.pd-highlight-grid .flex-col p {
+   margin: 0;
+   font-size: 1em;
+   line-height: 1.5;
+}
+
+/* ---------------------------------------------------------- Built-with tag */
+
+.pd-stack-tags {
+   padding-top: .3em;
+}
+
+/* --------------------------------------------------------- Prev / next nav */
+
+.pd-pagenav {
+   padding-top: calc(var(--section-padding) * .25);
+   padding-bottom: calc(var(--section-padding) * .55);
+}
+
+.pd-pagenav .row:nth-child(1) .flex-col {
+   width: 50%;
+   padding-left: var(--container-padding);
+   padding-right: var(--container-padding);
+}
+
+.pd-nav-link {
+   display: block;
+   transition: var(--animation-fast);
+}
+
+.pd-nav-link h5 {
+   margin: 0 0 .7em 0;
+   font-size: .8em;
+   text-transform: uppercase;
+   letter-spacing: .12em;
+   color: var(--color-gray);
+}
+
+.pd-nav-link h4 {
+   margin: 0;
+   transition: var(--animation-fast);
+}
+
+.pd-nav-link:hover h4 {
+   transform: translateX(calc(var(--container-padding) * -.1));
+}
+
+.pd-nav-right {
+   text-align: right;
+}
+
+.pd-nav-right .pd-nav-link:hover h4 {
+   transform: translateX(calc(var(--container-padding) * .1));
+}
+
+.pd-back-row {
+   margin-top: calc(var(--section-padding) * .3);
+}
+
+.pd-back-row .flex-col:nth-child(1) {
+   width: 50%;
+   padding-left: var(--container-padding);
+}
+
+.pd-nav-contact {
+   width: 50%;
+   padding-right: var(--container-padding);
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   text-align: right;
+}
+
+.pd-nav-contact p {
+   margin: 0;
+}
+
+.pd-nav-contact a {
+   transition: var(--animation-fast);
+}
+
+/* ------------------------------------------------------------- Responsive */
+
+@media (max-width: 991px) {
+   .pd-meta .flex-col {
+      width: 50%;
+      margin-bottom: 2em;
+   }
+
+   .pd-overview .flex-col:nth-child(1),
+   .pd-challenge .flex-col:nth-child(1),
+   .pd-stack .flex-col:nth-child(1) {
+      width: 100%;
+      padding-left: var(--container-padding);
+      margin-bottom: 1.5em;
+   }
+
+   .pd-overview .flex-col:nth-child(2),
+   .pd-challenge .flex-col:nth-child(2),
+   .pd-stack .flex-col:nth-child(2) {
+      width: 100%;
+   }
+
+   .pd-metrics .flex-col {
+      width: 50%;
+      margin-bottom: calc(var(--section-padding) * .15);
+   }
+
+   .pd-highlight-grid .flex-col {
+      width: 50%;
+   }
+
+   .pd-pagenav .row:nth-child(1) .flex-col {
+      width: 100%;
+      margin-bottom: 2em;
+   }
+
+   .pd-nav-right {
+      text-align: left;
+   }
+
+   .pd-back-row .flex-col:nth-child(1),
+   .pd-nav-contact {
+      width: 100%;
+      padding-right: var(--container-padding);
+      text-align: left;
+      justify-content: flex-start;
+      margin-top: 1.5em;
+   }
+}
+
+@media (max-width: 575px) {
+   .pd-metrics .flex-col,
+   .pd-highlight-grid .flex-col {
+      width: 100%;
+   }
+}
+/* ============================================================================
+ * LIVE-SITE LINKS
+ * Sits above the card anchor so the external link receives its own clicks.
+ * ========================================================================== */
+
+.work-items > li {
+   position: relative;
+}
+
+.work-live-float {
+   position: absolute;
+   top: 50%;
+   right: 0;
+   z-index: 5;
+   transform: translateY(-50%);
+   display: inline-flex;
+   align-items: center;
+   gap: .4em;
+   padding: .5em 1em;
+   border: 1px solid var(--color-gray);
+   border-radius: 999px;
+   font-size: .78em;
+   line-height: 1;
+   white-space: nowrap;
+   transition: var(--animation-fast);
+}
+
+.work-live-float:hover {
+   background: var(--color-dark);
+   color: var(--color-light);
+   border-color: var(--color-dark);
+}
+
+.work-live-arrow {
+   display: inline-block;
+   transition: var(--animation-fast);
+}
+
+.work-live-float:hover .work-live-arrow,
+.work-live-tile:hover .work-live-arrow {
+   transform: translate(2px, -2px);
+}
+
+/* Grid tiles: the link sits under the tile, outside the card anchor. */
+.work-live-tile {
+   display: inline-flex;
+   align-items: center;
+   gap: .4em;
+   margin-top: calc(var(--section-padding) * .06);
+   font-size: .85em;
+   transition: var(--animation-fast);
+}
+
+@media (max-width: 767px) {
+   .work-live-float {
+      position: static;
+      transform: none;
+      margin: 1em 0 0 var(--container-padding);
+      display: inline-flex;
+   }
+}
+
+/* ============================================================================
+ * CASE STUDY — live CTA + capability groups
+ * ========================================================================== */
+
+.pd-live-cta {
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 1.5em;
+   margin-top: calc(var(--section-padding) * .18);
+}
+
+.pd-live-btn {
+   display: inline-flex;
+   align-items: center;
+   gap: .7em;
+   padding: 1em 1.8em;
+   border-radius: 999px;
+   background: var(--color-dark);
+   color: var(--color-light);
+   font-size: .95em;
+   line-height: 1;
+   transition: var(--animation-fast);
+}
+
+.pd-live-btn:hover {
+   opacity: .82;
+}
+
+.pd-live-url {
+   font-size: .85em;
+   color: var(--color-gray);
+}
+
+.pd-caps {
+   padding-top: calc(var(--section-padding) * .3);
+   padding-bottom: calc(var(--section-padding) * .3);
+}
+
+.pd-caps .row {
+   flex-wrap: wrap;
+}
+
+.pd-cap {
+   width: 33.333%;
+   padding: calc(var(--section-padding) * .14) calc(var(--container-padding) * .55);
+   border-top: 1px solid var(--color-border);
+}
+
+.pd-cap h4 {
+   margin: 0 0 1.2em 0;
+   font-size: 1.15em;
+   line-height: 1.3;
+   /* Reserve two lines so every column's bullet list starts on the same row. */
+   min-height: 2.6em;
+}
+
+.pd-cap ul {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+
+.pd-cap li {
+   position: relative;
+   padding-left: 1.4em;
+   margin-bottom: .9em;
+   font-size: .95em;
+   line-height: 1.5;
+   color: var(--color-gray);
+}
+
+.pd-cap li::before {
+   content: '';
+   position: absolute;
+   left: 0;
+   top: .55em;
+   width: 5px;
+   height: 5px;
+   border-radius: 50%;
+   background: var(--color-gray);
+}
+
+@media (max-width: 991px) {
+   .pd-cap {
+      width: 50%;
+   }
+}
+
+@media (max-width: 575px) {
+   .pd-cap {
+      width: 100%;
+   }
+}
+
+/* ============================================================================
+ * ASPECT-RATIO FIX — stop the screenshots being cropped
+ *
+ * The original stylesheet forces square frames (padding-top: 100%) for the
+ * Work tiles and the mouse-follow preview. The captures are 1746x899, so a
+ * square frame + background-size:cover cuts ~23% off the sides.
+ *
+ * These frames now match the real capture ratio (899/1746 = 51.49%).
+ * Screenshot projects fill it with `cover` (set inline); the two projects
+ * without a live site use `contain` over a matching background colour so the
+ * square art letterboxes seamlessly instead of being cut.
+ * ========================================================================== */
+
+.work-tiles ul li a .tile-image::before,
+.mouse-pos-list-image::before,
+.mouse-pos-list-image .float-image-wrap .mouse-pos-list-image-inner::before,
+.mouse-pos-list-image .float-image-wrap .mouse-pos-list-image-inner:before {
+   padding-top: 51.49%;
+}
+
+/* Single-image projects keep their square art, uncropped. */
+.work-tiles ul li a .tile-image.is-square::before {
+   padding-top: 100%;
+}
+
+.pd-hero-frame.is-square {
+   aspect-ratio: 1 / 1;
+}
+
+/* ============================================================================
+ * IMAGE CAROUSEL
+ * ========================================================================== */
+
+.pd-gallery {
+   position: relative;
+}
+
+.pd-gallery-frame {
+   position: relative;
+   width: 100%;
+   aspect-ratio: 1746 / 899;
+   overflow: hidden;
+   border-radius: 4px;
+   background: var(--color-dark);
+}
+
+.pd-gallery-img {
+   display: block;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   animation: pd-gallery-in .45s cubic-bezier(0.34, 1, 0.64, 1) both;
+}
+
+@keyframes pd-gallery-in {
+   from { opacity: 0; transform: scale(1.015); }
+   to   { opacity: 1; transform: scale(1); }
+}
+
+.pd-gallery-nav {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   width: 3.2em;
+   height: 3.2em;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border: 0;
+   border-radius: 50%;
+   background: rgba(255, 255, 255, .14);
+   color: #fff;
+   font-size: 1em;
+   cursor: pointer;
+   backdrop-filter: blur(6px);
+   transition: var(--animation-fast);
+   z-index: 2;
+}
+
+.pd-gallery-nav:hover {
+   background: rgba(255, 255, 255, .28);
+}
+
+.pd-gallery-prev { left: 1.2em; }
+.pd-gallery-next { right: 1.2em; }
+
+.pd-gallery-count {
+   position: absolute;
+   right: 1.4em;
+   bottom: 1.2em;
+   z-index: 2;
+   padding: .45em .9em;
+   border-radius: 999px;
+   background: rgba(0, 0, 0, .45);
+   color: #fff;
+   font-size: .75em;
+   letter-spacing: .08em;
+   backdrop-filter: blur(6px);
+}
+
+.pd-gallery-slash {
+   opacity: .5;
+   margin: 0 .35em;
+}
+
+.pd-gallery-caption {
+   margin: 1.1em 0 0 0;
+   font-size: .85em;
+   color: var(--color-gray);
+}
+
+.pd-gallery-dots {
+   display: flex;
+   gap: .55em;
+   margin-top: 1.4em;
+}
+
+.pd-gallery-dot {
+   width: 2.2em;
+   height: 2px;
+   padding: 0;
+   border: 0;
+   background: var(--color-gray);
+   opacity: .35;
+   cursor: pointer;
+   transition: var(--animation-fast);
+}
+
+.pd-gallery-dot:hover { opacity: .7; }
+
+.pd-gallery-dot.is-active {
+   opacity: 1;
+   background: var(--color-dark);
+}
+
+@media (max-width: 767px) {
+   .pd-gallery-nav {
+      width: 2.6em;
+      height: 2.6em;
+      font-size: .85em;
+   }
+
+   .pd-gallery-prev { left: .6em; }
+   .pd-gallery-next { right: .6em; }
+}
+
+/* ============================================================================
+ * SKILLS SECTION (Home)
+ * Numbered discipline columns, each listing skills with a short note and how
+ * many of the seven products evidence it.
+ * ========================================================================== */
+
+.home-skills {
+   padding-top: calc(var(--section-padding) * .35);
+   padding-bottom: calc(var(--section-padding) * .35);
+}
+
+.home-skills .row:nth-child(1) {
+   align-items: flex-end;
+   padding-bottom: calc(var(--section-padding) * .2);
+}
+
+.home-skills h2 {
+   margin: 0;
+}
+
+.skills-intro-col {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+   text-align: right;
+}
+
+.skills-intro-col p {
+   margin: 0;
+   max-width: 34em;
+   font-size: 1em;
+   line-height: 1.5;
+}
+
+.skills-total {
+   margin: 1.2em 0 0 0;
+   font-size: .78em;
+   text-transform: uppercase;
+   letter-spacing: .12em;
+   color: var(--color-gray);
+}
+
+.skills-groups {
+   flex-wrap: wrap;
+}
+
+.skills-group {
+   width: 33.333%;
+   padding: calc(var(--section-padding) * .16) calc(var(--container-padding) * .6);
+   border-top: 1px solid var(--color-border);
+}
+
+.skills-group h5 {
+   margin: 0;
+   font-size: 1.1em;
+   line-height: 1.3;
+   /* Reserve two lines so every discipline starts its list on the same row. */
+   min-height: 2.6em;
+}
+
+.skills-blurb {
+   margin: 0 0 1.6em 0;
+   font-size: .85em;
+   line-height: 1.45;
+   color: var(--color-gray);
+}
+
+.skills-list {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+
+.skills-list li {
+   position: relative;
+   padding: .9em 0;
+   border-top: 1px solid var(--color-border);
+}
+
+.skills-list li:first-child {
+   border-top: 0;
+   padding-top: 0;
+}
+
+.skills-name {
+   display: block;
+   font-size: .95em;
+   line-height: 1.3;
+   transition: var(--animation-fast);
+}
+
+.skills-note {
+   display: block;
+   margin-top: .35em;
+   font-size: .82em;
+   line-height: 1.45;
+   color: var(--color-gray);
+}
+
+.skills-used {
+   position: absolute;
+   top: .95em;
+   right: 0;
+   font-size: .72em;
+   letter-spacing: .06em;
+   text-transform: uppercase;
+   color: var(--color-gray);
+   opacity: .75;
+}
+
+@media (max-width: 991px) {
+   .skills-intro-col {
+      align-items: flex-start;
+      text-align: left;
+   }
+
+   .skills-group {
+      width: 50%;
+   }
+}
+
+@media (max-width: 575px) {
+   .skills-group {
+      width: 100%;
+   }
+}
+
+/* ============================================================================
+ * ABOUT — approach grid + timeline
+ * ========================================================================== */
+
+.about-approach,
+.about-timeline {
+   padding-top: calc(var(--section-padding) * .35);
+   padding-bottom: calc(var(--section-padding) * .35);
+}
+
+.about-approach .row:nth-child(1),
+.about-timeline .row:nth-child(1) {
+   padding-bottom: calc(var(--section-padding) * .2);
+}
+
+.about-approach h2,
+.about-timeline h2 {
+   margin: 0;
+}
+
+.about-approach-grid {
+   flex-wrap: wrap;
+}
+
+.about-approach-grid .flex-col {
+   width: 33.333%;
+   padding: calc(var(--section-padding) * .14) calc(var(--container-padding) * .6);
+   border-top: 1px solid var(--color-border);
+}
+
+.about-approach-grid .flex-col h5 {
+   margin: 0 0 1.3em 0;
+   font-size: .8em;
+   color: var(--color-gray);
+}
+
+.about-approach-grid .flex-col .stripe {
+   margin-bottom: 1.5em;
+}
+
+.about-approach-grid .flex-col h4 {
+   margin: 0 0 .8em 0;
+   font-size: 1.1em;
+   line-height: 1.3;
+   min-height: 2.6em;
+}
+
+.about-approach-grid .flex-col p {
+   margin: 0;
+   font-size: .9em;
+   line-height: 1.5;
+   color: var(--color-gray);
+}
+
+/* -------------------------------------------------------------- Timeline */
+
+.about-timeline-item {
+   width: 100%;
+   flex-wrap: wrap;
+   border-top: 1px solid var(--color-border);
+}
+
+.about-timeline-item .about-timeline-period {
+   width: 16%;
+   padding: calc(var(--section-padding) * .1) var(--container-padding) calc(var(--section-padding) * .1) 0;
+}
+
+.about-timeline-item .about-timeline-period h5 {
+   margin: 0;
+   font-size: .85em;
+   letter-spacing: .1em;
+   text-transform: uppercase;
+   color: var(--color-gray);
+}
+
+.about-timeline-item .about-timeline-body {
+   width: 84%;
+   padding: calc(var(--section-padding) * .1) 0;
+}
+
+.about-timeline-item .about-timeline-body h4 {
+   margin: 0 0 .5em 0;
+   font-size: 1.15em;
+   line-height: 1.3;
+}
+
+.about-timeline-item .about-timeline-body p {
+   margin: 0;
+   font-size: .92em;
+   line-height: 1.5;
+   color: var(--color-gray);
+   max-width: 52em;
+}
+
+@media (max-width: 991px) {
+   .about-approach-grid .flex-col {
+      width: 50%;
+   }
+
+   .about-timeline-item .about-timeline-period {
+      width: 100%;
+      padding: calc(var(--section-padding) * .1) var(--container-padding) 0 0;
+   }
+
+   .about-timeline-item .about-timeline-body {
+      width: 100%;
+   }
+}
+
+@media (max-width: 575px) {
+   .about-approach-grid .flex-col {
+      width: 100%;
+   }
+}
+
+/* ============================================================================
+ * ABOUT — fill the two dead columns the template leaves empty
+ *
+ * The original stylesheet hides `.single-image .overlay`,
+ * `.about-awwwards .single-image .overlay` and `.awwwards-badge`
+ * (display:none), which leaves the 65% portrait column and the 50%
+ * awwwards column completely blank. Those columns now carry real content.
+ * ========================================================================== */
+
+/* --- At a glance panel (right column of .about-image) ------------------- */
+
+.about-glance {
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.about-glance h5 {
+   margin: 0 0 1.8em 0;
+   font-size: .8em;
+   text-transform: uppercase;
+   letter-spacing: .12em;
+   color: var(--color-gray);
+}
+
+.about-glance-grid {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.about-glance-item {
+   width: 50%;
+   padding: 0 calc(var(--container-padding) * .6) calc(var(--section-padding) * .18) 0;
+}
+
+.about-glance-item h4 {
+   margin: 0;
+   font-size: clamp(2.2em, 4.5vw, 3.6em);
+   line-height: 1;
+   font-weight: 700;
+   letter-spacing: -.02em;
+}
+
+.about-glance-item h6 {
+   margin: .6em 0 0 0;
+   font-size: .78em;
+   font-weight: 400;
+   text-transform: uppercase;
+   letter-spacing: .1em;
+   color: var(--color-gray);
+}
+
+.about-glance .stripe {
+   margin: calc(var(--section-padding) * .14) 0;
+}
+
+.about-glance-note {
+   margin: 0;
+   font-size: .92em;
+   line-height: 1.5;
+   color: var(--color-gray);
+   max-width: 36em;
+}
+
+/* Give the intro copy a comfortable measure instead of a cramped 35%. */
+.about-image .flex-col:nth-child(1) p {
+   font-size: 1em;
+   line-height: 1.55;
+}
+
+/* --- Disciplines panel (left column of .about-awwwards) ----------------- */
+
+.about-disciplines h5 {
+   margin: 0 0 1.6em 0;
+   font-size: .8em;
+   text-transform: uppercase;
+   letter-spacing: .12em;
+   color: var(--color-gray);
+}
+
+.about-disciplines ul {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+
+.about-disciplines li {
+   display: flex;
+   align-items: baseline;
+   gap: .8em;
+   padding: .85em 0;
+   border-top: 1px solid var(--color-border);
+}
+
+.about-disciplines li:first-child {
+   border-top: 0;
+   padding-top: 0;
+}
+
+.about-disc-nr {
+   font-size: .75em;
+   letter-spacing: .08em;
+   color: var(--color-gray);
+   min-width: 2em;
+}
+
+.about-disc-name {
+   flex: 1;
+   font-size: .95em;
+   line-height: 1.3;
+}
+
+.about-disc-count {
+   font-size: .75em;
+   letter-spacing: .06em;
+   color: var(--color-gray);
+   opacity: .8;
+}
+
+@media screen and (max-width: 840px) {
+   .about-glance {
+      margin-top: calc(var(--section-padding) * .4);
+      justify-content: flex-start;
+   }
+}
+
+@media screen and (max-width: 720px) {
+   .about-awwwards .flex-col:nth-child(1) {
+      display: block;
+      width: 100%;
+      padding-left: var(--container-padding);
+      padding-right: var(--container-padding);
+      margin-bottom: calc(var(--section-padding) * .4);
+   }
+
+   .about-glance-item {
+      width: 50%;
+   }
+}

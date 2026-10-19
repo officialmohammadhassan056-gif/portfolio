@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#17102E"/>
+      <stop offset="1" stop-color="#5B21B6"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.75" cy="0.2" r="0.7">
+      <stop offset="0" stop-color="#A78BFA" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#A78BFA" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.6" fill="#FFFFFF" fill-opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="1000" height="1000" fill="url(#bg)"/>
+  <rect width="1000" height="1000" fill="url(#dots)"/>
+  <rect width="1000" height="1000" fill="url(#glow)"/>
+  <g stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1">
+    <line x1="70" y1="640" x2="930" y2="640"/>
+    <line x1="70" y1="760" x2="930" y2="760"/>
+    <line x1="70" y1="880" x2="930" y2="880"/>
+  </g>
+  <path d="M90 800 C 260 760, 300 640, 440 620 S 700 560, 910 420" fill="none" stroke="#C4B5FD" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 0"/>
+  <circle cx="90" cy="800" r="11" fill="#FFFFFF"/>
+  <g fill="#FFFFFF">
+    <circle cx="440" cy="620" r="9"/>
+    <circle cx="910" cy="420" r="9"/>
+  </g>
+  <g transform="translate(880,368)">
+    <path d="M0 52 L62 0 L124 52 L124 118 Q124 150 96 162 L62 176 L28 162 Q0 150 0 118 Z" fill="#C4B5FD" fill-opacity="0.18" stroke="#C4B5FD" stroke-width="5"/>
+    <circle cx="62" cy="86" r="17" fill="none" stroke="#FFFFFF" stroke-width="5"/>
+    <line x1="62" y1="103" x2="62" y2="138" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(340,540)" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round">
+    <path d="M6 34 L14 12 Q20 -2 34 0 L48 4 Q60 8 60 22 L60 32"/>
+    <rect x="0" y="32" width="66" height="30" rx="10"/>
+    <circle cx="18" cy="66" r="9"/>
+    <circle cx="50" cy="66" r="9"/>
+  </g>
+  <text x="70" y="110" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="7" fill="#DDD6FE">PREMIUM CHAUFFEUR TRANSPORT · MEMBERSHIP</text>
+  <text x="70" y="945" font-family="Arial, Helvetica, sans-serif" font-size="86" font-weight="800" fill="#FFFFFF">PORTZ</text>
+</svg>

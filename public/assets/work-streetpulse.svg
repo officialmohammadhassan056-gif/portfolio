@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A1F1C"/>
+      <stop offset="1" stop-color="#0F766E"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.7" cy="0.25" r="0.7">
+      <stop offset="0" stop-color="#2DD4BF" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#2DD4BF" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.6" fill="#FFFFFF" fill-opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="1000" height="1000" fill="url(#bg)"/>
+  <rect width="1000" height="1000" fill="url(#dots)"/>
+  <rect width="1000" height="1000" fill="url(#glow)"/>
+  <g fill="none" stroke="#5EEAD4" stroke-width="6" stroke-linecap="round">
+    <path d="M120 760 L300 600 L470 690 L640 470 L820 540" stroke-dasharray="18 20" stroke-opacity="0.85"/>
+  </g>
+  <g fill="#FFFFFF">
+    <circle cx="300" cy="600" r="9"/>
+    <circle cx="640" cy="470" r="9"/>
+  </g>
+  <g transform="translate(120,760)">
+    <circle cx="0" cy="0" r="18" fill="#FFFFFF"/>
+  </g>
+  <g transform="translate(820,540)">
+    <circle cx="0" cy="0" r="18" fill="#5EEAD4"/>
+  </g>
+  <g transform="translate(300,600)">
+    <path d="M0 -46 L10 -14 L44 -14 L16 6 L27 40 L0 19 L-27 40 L-16 6 L-44 -14 L-10 -14 Z" fill="#FFFFFF" fill-opacity="0.92"/>
+  </g>
+  <g transform="translate(640,470)" fill="none" stroke="#5EEAD4" stroke-width="6" stroke-linecap="round">
+    <path d="M-34 20 L-34 -20 L-10 4 L14 -26 L34 4"/>
+    <circle cx="0" cy="0" r="46" stroke-opacity="0.3"/>
+  </g>
+  <g fill="#FFFFFF" fill-opacity="0.55">
+    <rect x="440" y="250" width="180" height="14" rx="7"/>
+    <rect x="470" y="284" width="120" height="14" rx="7"/>
+  </g>
+  <text x="70" y="110" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="7" fill="#99F6E4">AI TRIP ASSISTANT · AR WAYFINDING · GAMIFICATION</text>
+  <text x="70" y="945" font-family="Arial, Helvetica, sans-serif" font-size="86" font-weight="800" fill="#FFFFFF">StreetPulse</text>
+</svg>
