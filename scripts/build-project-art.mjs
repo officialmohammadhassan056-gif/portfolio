@@ -1,7 +1,7 @@
 // Anatomy: https://github.com/wheresryan22/anatomy (MIT, see vendor/anatomy/LICENSE).
 // Run: node scripts/build-project-art.mjs --audit
 // Output is standalone, static SVG: no browser-side drawing library or animation.
-import { writeFileSync, readFileSync, mkdirSync } from 'node:fs';
+import { writeFileSync, mkdirSync } from 'node:fs';
 import * as k from './vendor/anatomy/iso-kit.mjs';
 import * as A from './vendor/anatomy/audit.mjs';
 
@@ -147,6 +147,4 @@ writeFileSync(new URL('preview.html', output), `<!doctype html><html lang="en"><
 writeFileSync(new URL('parts.json', output), JSON.stringify(specs.map(({ parts, title, description }) => ({ title, concept: description, parts })), null, 2));
 writeFileSync(new URL('qa.html', output), `<!doctype html><html lang="en"><meta charset="utf-8"><title>SVG size and detail checks</title><style>body{font:14px Arial;background:#f7f7f5;color:#39424a;margin:24px}.row{display:flex;gap:24px;align-items:start;margin-bottom:28px}iframe{border:0;display:block}h2{font-size:18px;font-weight:500}</style><h2>390 px cards</h2><div class="row">${specs.map(s => `<iframe title="${s.title} at phone width" width="390" height="390" src="../../public/assets/${s.filename}"></iframe>`).join('')}</div><h2>Mechanism close-ups</h2><div class="row">${specs.map(s => `<iframe title="${s.title} close-up" width="500" height="500" src="${s.filename.replace('.svg', '-closeup.svg')}"></iframe>`).join('')}</div></html>`);
 
-// Use an actual user-supplied photograph for the tab icon, not the template face.
-const facePhoto = readFileSync(new URL('./source-assets/profile-reference.png', import.meta.url)).toString('base64');
-writeFileSync(new URL('favicon.svg', assets), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><title>Mohammad Hassan</title><defs><clipPath id="face"><circle cx="50" cy="50" r="49"/></clipPath></defs><g clip-path="url(#face)"><g transform="translate(-70 -27.5) scale(.5)"><image width="370" height="436" transform="translate(0 370) rotate(-90)" href="data:image/png;base64,${facePhoto}"/></g></g></svg>`);
+// Browser icons are exported from the About portrait by build-favicon.py.

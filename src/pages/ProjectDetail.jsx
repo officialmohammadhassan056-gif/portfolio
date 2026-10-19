@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { useTransition } from '../context/TransitionContext';
 import ProjectGallery from '../components/ProjectGallery';
+import ProjectOverview from '../components/ProjectOverview';
 import { PROJECTS, getProject, getProjectIndex } from '../data/projects';
 import { SITE } from '../data/site';
 
@@ -91,42 +92,11 @@ export default function ProjectDetail() {
       </section>
 
       {/* -------------------------------------------------------- Overview */}
-      <section className="section pd-overview">
-        <div className="container medium">
-          <div className="row">
-            <div className="flex-col">
-              <div className="stripe"></div>
-              <h5>Overview</h5>
-            </div>
-            <div className="flex-col">
-              <h4 className="span-lines animate">
-                <span className="span-line">
-                  <span className="span-line-inner">{project.overview}</span>
-                </span>
-              </h4>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* -------------------------------------------------------- Challenge */}
-      <section className="section pd-challenge">
-        <div className="container medium">
-          <div className="row">
-            <div className="flex-col">
-              <div className="stripe"></div>
-              <h5>The challenge</h5>
-            </div>
-            <div className="flex-col">
-              <p className="pd-lead">{project.challenge}</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ProjectOverview project={project} index={idx} />
 
       {/* -------------------------------------------------------- Capabilities */}
       {project.capabilities && project.capabilities.length > 0 && (
-        <section className="section pd-caps">
+        <section className="section pd-caps" id="project-capabilities">
           <div className="container">
             <div className="row">
               <div className="flex-col">

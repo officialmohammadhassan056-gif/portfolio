@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTransition } from '../context/TransitionContext';
 import Skills from '../components/Skills';
+import ProjectThumbnail from '../components/ProjectThumbnail';
 import { PROJECTS } from '../data/projects';
 import { SITE } from '../data/site';
 
@@ -191,18 +192,7 @@ export default function Home() {
                   <div className="single-tile-wrap">
                     <a href={`/work/${p.id}`} onClick={(e) => openProject(e, p.id)} className="row">
                       <div className="flex-col">
-                        <div className="tile-image">
-                          <div
-                            className="overlay overlay-image"
-                            style={{
-                              backgroundImage: `url(${p.image})`,
-                              backgroundColor: p.bgColor,
-                              backgroundPosition: 'center center',
-                              backgroundRepeat: 'no-repeat',
-                              backgroundSize: 'cover'
-                            }}
-                          ></div>
-                        </div>
+                        <ProjectThumbnail project={p} />
                       </div>
                       <div className="flex-col">
                         <h4><span>{p.title}</span></h4>

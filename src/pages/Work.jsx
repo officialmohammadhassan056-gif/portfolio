@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PROJECTS, CATEGORIES } from '../data/projects';
 import { useTransition } from '../context/TransitionContext';
+import ProjectThumbnail from '../components/ProjectThumbnail';
 
 export default function Work() {
   const [filter, setFilter] = useState('all');
@@ -208,18 +209,7 @@ export default function Work() {
                     <div className="single-tile-wrap">
                       <a href={`/work/${p.id}`} onClick={(e) => openProject(e, p.id)} className="row">
                         <div className="flex-col">
-                          <div className={`tile-image${p.preview ? '' : ' is-square'}`}>
-                            <div
-                              className="overlay overlay-image"
-                              style={{
-                                backgroundImage: `url(${previewFor(p)})`,
-                                backgroundColor: p.bgColor,
-                                backgroundPosition: 'center center',
-                                backgroundRepeat: 'no-repeat',
-                                backgroundSize: fitFor(p)
-                              }}
-                            ></div>
-                          </div>
+                          <ProjectThumbnail project={p} />
                         </div>
                         <div className="flex-col">
                           <h4><span>{p.title}</span></h4>
