@@ -4,8 +4,7 @@ import { SKILL_GROUPS, SKILL_COUNT } from '../data/skills';
 /**
  * Skills — a cross-project capability breakdown on the Home page.
  *
- * Each group is a numbered column with a one-line framing blurb and a list of
- * skills, each noting how many of the seven products evidence it.
+ * Each discipline lists skills and their manually maintained project counts.
  */
 export default function Skills() {
   return (
@@ -35,8 +34,8 @@ export default function Skills() {
               <h5>{group.title}</h5>
               <p className="skills-blurb">{group.blurb}</p>
               <ul className="skills-list">
-                {group.items.map((item) => (
-                  <li key={item.name}>
+                {group.items.map((item, index) => (
+                  <li key={item.name} style={{ '--skill-delay': `${index * 30}ms` }}>
                     <span className="skills-name">{item.name}</span>
                     <span className="skills-note">{item.note}</span>
                     <span className="skills-used">{item.usedIn}</span>

@@ -2,9 +2,8 @@
  * SKILLS
  *
  * A cross-project view of every skill and concept exercised across the seven
- * products. `usedIn` records which projects each one is evidenced in, so the
- * list stays honest and traceable to real work rather than a generic
- * keyword dump.
+ * products. `usedIn` is a manually maintained project count, not a list of
+ * project references or an automatically verified coverage metric.
  *
  * Sourced from the project case studies in ./projects.js
  * ========================================================================== */
@@ -30,7 +29,7 @@ export const SKILL_GROUPS = [
     title: 'Backend & APIs',
     blurb: 'Serving layer: routing, validation, realtime and defensive engineering.',
     items: [
-      { name: 'Node.js', note: 'Runtime across every backend in the portfolio', usedIn: '5 of 7' },
+      { name: 'Node.js', note: 'Backend runtime across five portfolio products', usedIn: '5 of 7' },
       { name: 'TypeScript', note: 'Strict typing across all 17 XOVO packages and the Turborepo apps', usedIn: '6 of 7' },
       { name: 'Express', note: 'Route composition, middleware chains, shared router factories', usedIn: '4 of 7' },
       { name: 'Fastify', note: 'Plugin architecture, correlation IDs, standardised envelopes', usedIn: '2 of 7' },

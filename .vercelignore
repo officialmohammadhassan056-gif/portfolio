@@ -1,0 +1,6 @@
+output/
+scripts/source-assets/
+*.log
+.env*
+public/assets/mohammad-studio-hero.png
+public/assets/mohammad-studio-portrait.png
